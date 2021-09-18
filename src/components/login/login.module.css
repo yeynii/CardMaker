@@ -1,0 +1,74 @@
+@value makerLightPink, makerGreen,makerWhite, makerBlack, makerGrey from '../../common/colors.css';
+
+
+.form{
+    flex-direction: column;
+    text-align: center;
+    width:400px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginHeader{
+    width: 100%;
+    flex-direction: column;
+    background-color: makerGreen;
+    padding: 0.5em;
+    position: relative;
+}
+.loginLogo{
+    margin:auto;
+    width: 2em;
+}
+.logout{
+    position:absolute;
+    right: 0.5em;
+    top: 0.5em;
+    background-color: makerBlack;
+    border-radius: 0.5em;
+    border-style:none;
+    border-color: makerWhite;
+    color: makerWhite;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+}
+
+.logout:hover{
+    border-style:dotted;
+}
+
+.headerTitle{
+    font-size:1.5em;
+    color:makerWhite;
+}
+
+.loginPage{
+    flex-direction: column;
+    padding: 1em 0.5em;
+    background-color: makerWhite;
+}
+.loginText{
+    font-size:1.5em;
+    margin-bottom: 0.5em;
+}
+.authButton{
+    width: 100%;
+    height: 2.5em;
+    border: 0.1rem solid makerGreen;
+    background-color: transparent;
+    border-radius: 1em;
+    padding:0.5em;
+    margin-bottom:0.5em;
+    cursor: pointer;
+    outline: 0;
+}
+.authButton:hover{
+    background-color: makerLightPink;
+
+}
+.loginFooter{
+    background-color: makerGreen;
+    padding: 1em;
+    color:makerWhite;
+    font-size: 0.5em;
+}

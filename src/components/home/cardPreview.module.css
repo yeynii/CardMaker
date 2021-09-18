@@ -1,0 +1,17 @@
+@value makerLightPink, makerGreen,makerWhite, makerBlack, makerLightGrey from '../../common/colors.css';
+
+.cardPreview{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.cardPreviewText{
+    color: makerGreen;
+    font-weight: bold;
+}
+
+li{
+    list-style-type:none;
+}
