@@ -1,20 +1,5 @@
 @value makerLightPink, makerGreen,makerWhite, makerBlack, makerLightGrey from '../../common/colors.css';
 
-.cardMaker{
-    display: flex;
-    flex:1;
-    flex-direction: column;
-    padding: 1em;
-}
-
-.cardMakerText{
-    color: makerGreen;
-    font-weight: bold;
-}
-
-.cardMakingLists{
-    padding:0;
-}
 .cardMakingList{
     list-style-type:none;
     height: 100px;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router";
-import CardMaker from "./cardMaker";
+import CardMakers from "./cardMakers";
 import styles from "./home.module.css";
 import CardPreview from './cardPreview';
 
@@ -26,8 +26,8 @@ const Home = ({ authService }) => {
         <div className={styles.headerTitle}>Business Card Maker</div>
       </header>
       <section className={styles.cardPage}>
-          <CardMaker/>
-          <hr noshade="true"/>
+          <CardMakers/>
+          <hr />
           <CardPreview/>
       </section>
       <footer className={styles.homeFooter}>Code your dream</footer>

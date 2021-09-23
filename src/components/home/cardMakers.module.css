@@ -1,0 +1,27 @@
+@value makerLightPink, makerGreen,makerWhite, makerBlack, makerLightGrey from '../../common/colors.css';
+
+.cardMaker{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.cardMakerText{
+    color: makerGreen;
+    font-weight: bold;
+}
+
+.cardMakingLists{
+    padding:1em;
+    overflow-y:scroll;
+}
+
+.cardMakingLists::-webkit-scrollbar{
+    width: 6px;
+}
+
+.cardMakingLists::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,46.7%,.267);
+    border-radius: 4px;
+}
