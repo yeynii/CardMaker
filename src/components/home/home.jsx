@@ -1,10 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import CardMakers from "./cardMakers";
+import Editor from "../editor/editor";
 import styles from "./home.module.css";
-import CardPreview from './cardPreview';
+import Preview from '../preview/preview';
 
 const Home = ({ authService }) => {
+  const [card, setCards] = useState([
+    {
+      id: '1',
+      name: 'yeyun',
+      company: 'anne',
+      theme: 'light',
+      title: 'Software Enginner',
+      email: 'yeynii@gmail.com',
+      message: 'go for it',
+      fileName: 'yeyun',
+      fileURL:null
+    },
+    {
+      id: '2',
+      name: 'yeyun',
+      company: 'anne',
+      theme: 'dark',
+      title: 'Software Enginner',
+      email: 'yeynii@gmail.com',
+      message: 'go for it',
+      fileName: 'yeyun',
+      fileURL:''
+    },
+    {
+      id: '3',
+      name: 'yeyun',
+      company: 'anne',
+      theme: 'colorful',
+      title: 'Software Enginner',
+      email: 'yeynii@gmail.com',
+      message: 'go for it',
+      fileName: 'yeyun',
+      fileURL:''
+    },
+  ]);
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
@@ -26,9 +61,9 @@ const Home = ({ authService }) => {
         <div className={styles.headerTitle}>Business Card Maker</div>
       </header>
       <section className={styles.cardPage}>
-          <CardMakers/>
+          <Editor cards ={card}/>
           <hr />
-          <CardPreview/>
+          <Preview cards ={card}/>
       </section>
       <footer className={styles.homeFooter}>Code your dream</footer>
     </div>
