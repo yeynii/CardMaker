@@ -2,7 +2,7 @@
 
 .cardMaker{
     display: flex;
-    flex:1;
+    flex-basis: 50%;
     flex-direction: column;
     padding: 1em;
 }
@@ -13,7 +13,7 @@
 }
 
 .cardMakingLists{
-    padding:1em;
+    padding: 0.5em 2em;
     overflow-y:scroll;
 }
 

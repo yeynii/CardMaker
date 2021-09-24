@@ -60,7 +60,7 @@ const Home = ({ authService }) => {
         </button>
         <div className={styles.headerTitle}>Business Card Maker</div>
       </header>
-      <section className={styles.cardPage}>
+      <section className={styles.container}>
           <Editor cards ={card}/>
           <hr />
           <Preview cards ={card}/>

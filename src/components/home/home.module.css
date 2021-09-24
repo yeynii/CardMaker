@@ -42,7 +42,7 @@
     color:makerWhite;
 }
 
-.cardPage{
+.container{
     width: 100%;
     height: 80%;
     display: flex;
@@ -62,4 +62,10 @@ hr{
     color:makerWhite;
     font-size: 0.5em;
     justify-content: center;
+}
+@media screen and (max-width:mediaQuery){
+    .container{
+        flex-direction: column;
+    }
+    
 }

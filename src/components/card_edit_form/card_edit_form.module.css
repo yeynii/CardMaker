@@ -1,43 +1,44 @@
 @value makerLightPink, makerGreen,makerWhite, makerBlack, makerLightGrey from '../../common/colors.css';
 
-.cardMakingList{
-    list-style-type:none;
-    height: 100px;
+.form{
+    display: flex;
     width: 100%;
-    border : 1px solid makerGreen;
-    padding: 0;
+    flex-wrap: wrap;
+    border-top : 1px solid makerBlack;
+    border-left : 1px solid makerBlack;
     margin-bottom: 1em;
 }
-.firstRow, .secondRow, .forthRow{
-    display: flex;
+.input,
+.textarea,
+.select,
+.button,
+.fileInput{
+    font-size: 0.8em;
     width: 100%;
-    height: 23%;
-    flex-direction: row;
-    justify-content: stretch;
+    border: 0;
+    padding: 0.5em;
+    border-bottom : 1px solid makerBlack;
+    border-right : 1px solid makerBlack;
+    background: makerWhite;
 }
-.thirdRow {
-    display: flex;
-    width: 100%;
-    height: 31%;
-    flex-direction: row;
-    justify-content: stretch;
 
+.input,
+.select{
+    flex: 1 1 30%;
 }
-input,select{
-    width: 100%;
-    border : 1px solid makerGreen;
-    padding:0.5em;
-    font-size: 0.5em;
+
+.fileInput{
+    padding: 0;
+    flex: 1 1 50%;
 }
-.imgButton{
-    width: 100%;
-    background-color: makerLightPink;
-    border : 1px solid makerGreen;
-    color:makerBlack;
+
+.input:focus,
+.textarea:focus,
+.select:focus,
+.button:focus {
+    outline:0;
 }
-.deleteButton{
-    width: 100%;
-    background-color: makerGreen;
-    border : 1px solid makerGreen;
-    color:makerWhite;
+
+.textarea {
+    flex-basis:100%;
 }
