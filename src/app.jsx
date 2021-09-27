@@ -2,7 +2,7 @@ import React from "react";
 import "./app.module.css";
 import Login from "./components/login/login";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Home from './components/home/home';
+import Maker from './components/maker/maker';
 
 function App({authService}) {
   return (
@@ -12,7 +12,7 @@ function App({authService}) {
           <Login authService={authService} />
         </Route>
         <Route path="/home">
-          <Home authService={authService} />
+          <Maker authService={authService} />
         </Route>
       </Switch>
     </BrowserRouter>

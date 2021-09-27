@@ -4,7 +4,7 @@ import Card from "../card/card";
 const Preview = ({ cards }) => {
   return (
     <section className={styles.preview}>
-      <div className={styles.title}>Card Preview</div>
+      <h1 className={styles.title}>Card Preview</h1>
       <ul className={styles.cards}>
         {cards.map((card) => (
           <Card card={card} />

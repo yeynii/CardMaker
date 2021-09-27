@@ -1,0 +1,11 @@
+@value makerGreen,makerWhite from '../../common/colors.css';
+
+.homeFooter{
+    width: 100%;
+    display: flex;
+    background-color: makerGreen;
+    padding: 1em;
+    color:makerWhite;
+    font-size: 0.5em;
+    justify-content: center;
+}

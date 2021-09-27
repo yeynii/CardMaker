@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Editor from "../editor/editor";
-import styles from "./home.module.css";
+import styles from "./maker.module.css";
 import Preview from '../preview/preview';
+import Header from "../header/header";
+import Footer from "../footer/footer";
 
-const Home = ({ authService }) => {
-  const [card, setCards] = useState([
+const Maker = ({ authService }) => {
+  const [cards, setCards] = useState([
     {
       id: '1',
       name: 'yeyun',
@@ -52,21 +54,14 @@ const Home = ({ authService }) => {
     });
   });
   return (
-    <div className={styles.maker}>
-      <header className={styles.homeHeader}>
-        <img className={styles.homeLogo} src="/images/logo.png" alt="logo" />
-        <button className={styles.logout} onClick={onLogout}>
-          logout
-        </button>
-        <div className={styles.headerTitle}>Business Card Maker</div>
-      </header>
-      <section className={styles.container}>
-          <Editor cards ={card}/>
-          <hr />
-          <Preview cards ={card}/>
-      </section>
-      <footer className={styles.homeFooter}>Code your dream</footer>
-    </div>
+    <section className={styles.maker}>
+      <Header onLogout={onLogout} />
+      <div className={styles.container}>
+          <Editor cards ={cards}/>
+          <Preview cards ={cards}/>
+      </div>
+      <Footer/>
+    </section>
   );
 };
-export default Home;
+export default Maker;
