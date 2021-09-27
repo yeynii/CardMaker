@@ -7,8 +7,8 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 
 const Maker = ({ authService }) => {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
       id: "1",
       name: "yeyun",
       company: "anne",
@@ -19,7 +19,7 @@ const Maker = ({ authService }) => {
       fileName: "yeyun",
       fileURL: null,
     },
-    {
+    2: {
       id: "2",
       name: "yeyun",
       company: "anne",
@@ -30,7 +30,7 @@ const Maker = ({ authService }) => {
       fileName: "yeyun",
       fileURL: "",
     },
-    {
+    3: {
       id: "3",
       name: "yeyun",
       company: "anne",
@@ -41,19 +41,24 @@ const Maker = ({ authService }) => {
       fileName: "yeyun",
       fileURL: "",
     },
-  ]);
+  });
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
   };
-  const onAdd = (newCard) => {
-    setCards([...cards, newCard]);
+  const onDelete = card => {
+    setCards(cards => {
+      const updated = { ...cards };
+      delete updated[card.id];
+      return updated;
+    });
   };
-  const onDelete = (id) => {
-    setCards(cards.filter( card => card.id !== id ));
-  };
-  const onUpdate = (id, updated) => {
-    setCards(cards.map( card => id === card.id ? updated : card ));
+  const createOrUpdateCard = card => {
+    setCards(cards => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
   };
 
   useEffect(() => {
@@ -67,9 +72,9 @@ const Maker = ({ authService }) => {
       <div className={styles.container}>
         <Editor
           cards={cards}
-          onAdd={onAdd}
+          onAdd={createOrUpdateCard}
           onDelete={onDelete}
-          onUpdate={onUpdate}
+          onUpdate={createOrUpdateCard}
         />
         <Preview cards={cards} />
       </div>

@@ -4,7 +4,7 @@ import Button from "../button/button";
 import ImageFileInput from "../image_file_input/image_file_input";
 
 const CardEditForm = ({ card, onDelete, onUpdate }) => {
-  const { name, company, title, email, message, theme, fileName, fileURL } =
+  const { name, company, theme, title, email, message, fileName, fileURL } =
     card;
   const nameRef = useRef();
   const companyRef = useRef();
@@ -12,35 +12,20 @@ const CardEditForm = ({ card, onDelete, onUpdate }) => {
   const themeRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
-  
-  const handleDelete = (event) => {
+
+  const onChange = (event) => {
+    if (event.currentTarget == null) {
+      return;
+    }
     event.preventDefault();
-    onDelete(card.id);
+    onUpdate({
+      ...card,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
   };
 
-  const nameUpdate = () => {
-    const updated = {...card, name:nameRef.current.value};
-    onUpdate(card.id, updated);
-  };
-  const companyUpdate = () => {
-    const updated = {...card, company:companyRef.current.value};
-    onUpdate(card.id, updated);
-  };
-  const titleUpdate = () => {
-    const updated = {...card, title:titleRef.current.value};
-    onUpdate(card.id, updated);
-  };
-  const themeUpdate = () => {
-    const updated = {...card, theme:themeRef.current.value};
-    onUpdate(card.id, updated);
-  };
-  const emailUpdate = () => {
-    const updated = {...card, email:emailRef.current.value};
-    onUpdate(card.id, updated);
-  };
-  const messageUpdate = () => {
-    const updated = {...card, message:messageRef.current.value};
-    onUpdate(card.id, updated);
+  const onSubmit = () => {
+    onDelete(card);
   };
 
   useEffect(() => {
@@ -56,23 +41,52 @@ const CardEditForm = ({ card, onDelete, onUpdate }) => {
       <input
         ref={nameRef}
         type="text"
+        name="name"
         className={styles.input}
-        onChange={nameUpdate}
+        onChange={onChange}
       />
-      <input ref={companyRef} type="text" className={styles.input} onChange={companyUpdate}/>
-      <select ref={themeRef} className={styles.select} onChange={themeUpdate} >
-        <option value="dark">Dark</option>
-        <option value="light">Light</option>
-        <option value="colorful">Colorful</option>
+      <input
+        ref={companyRef}
+        type="text"
+        name="company"
+        className={styles.input}
+        onChange={onChange}
+      />
+      <select
+        ref={themeRef}
+        name="theme"
+        className={styles.select}
+        onChange={onChange}
+      >
+        <option value="light">light</option>
+        <option value="dark">dark</option>
+        <option value="colorful">colorful</option>
       </select>
-      <input ref={titleRef} type="text" className={styles.input} onChange={titleUpdate} />
-      <input ref={emailRef} type="text" className={styles.input} onChange={emailUpdate} />
-      <textarea ref={messageRef} className={styles.textarea} onChange={messageUpdate} />
+      <input
+        ref={titleRef}
+        type="text"
+        name="title"
+        className={styles.input}
+        onChange={onChange}
+      />
+      <input
+        ref={emailRef}
+        type="text"
+        name="email"
+        className={styles.input}
+        onChange={onChange}
+      />
+      <textarea
+        ref={messageRef}
+        name="message"
+        className={styles.textarea}
+        onChange={onChange}
+      />
       <div className={styles.fileInput}>
         <ImageFileInput fileName={fileName} />
       </div>
       <div className={styles.fileInput}>
-        <Button name="Delete" onClick={handleDelete} />
+        <Button name="Delete" onClick={onSubmit} />
       </div>
     </form>
   );
