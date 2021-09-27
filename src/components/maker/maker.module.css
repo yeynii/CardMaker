@@ -11,11 +11,13 @@
 
 .container {
   display: flex;
-  flex: 1;
+  flex: 1;  
+  max-height: 80vh;
 }
 
 @media screen and (max-width: mediaQuery) {
   .container {
     flex-direction: column;
+    max-height: none;
   }
 }

@@ -20,9 +20,11 @@ const CardEditForm = ({ card }) => {
       <input type="text" className={styles.input} value={email} />
       <textarea className={styles.textarea} value={message} />
       <div className={styles.fileInput}>
-        <ImageFileInput />
+        <ImageFileInput fileName={fileName}/>
       </div>
-      <Button name="Delete" onClick={onSubmit} />
+      <div className={styles.fileInput}>
+        <Button name="Delete" onClick={onSubmit} />
+      </div>
     </form>
   );
 };

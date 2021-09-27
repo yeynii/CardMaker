@@ -1,4 +1,4 @@
-@value makerBlack, makerWhite, makerLightPink from '../../common/colors.css';
+@value makerBlack, makerWhite, makerLightGrey from '../../common/colors.css';
 
 .form {
   display: flex;
@@ -31,7 +31,7 @@
 .fileInput {
   padding: 0;
   flex: 1 1 50%;
-  background-color: makerLightPink;
+  background-color: makerLightGrey;
 }
 
 .input:focus,
