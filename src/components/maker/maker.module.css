@@ -13,11 +13,17 @@
   display: flex;
   flex: 1;  
   max-height: 80vh;
+  min-height: 80vh;
+  max-width: 80vw;
+  min-width: 80vw;
 }
 
 @media screen and (max-width: mediaQuery) {
   .container {
     flex-direction: column;
     max-height: none;
+    min-height: none;
+    max-width: none;
+    min-width: none;
   }
 }
