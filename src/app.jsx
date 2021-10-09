@@ -4,15 +4,15 @@ import Login from "./components/login/login";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Maker from './components/maker/maker';
 
-function App({authService}) {
+function App({FileInput, authService}) {
   return (
     <BrowserRouter>
       <Switch>
         <Route path={["/login","/"]} exact>
-          <Login authService={authService} />
+          <Login authService={authService}/>
         </Route>
         <Route path="/home">
-          <Maker authService={authService} />
+          <Maker FileInput={FileInput} authService={authService} />
         </Route>
       </Switch>
     </BrowserRouter>

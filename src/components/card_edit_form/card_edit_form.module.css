@@ -31,7 +31,6 @@
 .fileInput {
   padding: 0;
   flex: 1 1 50%;
-  background-color: makerLightPink;
 }
 
 .input:focus,
