@@ -2,7 +2,7 @@ import React,{useRef, useState} from "react";
 import styles from "./card_add_form.module.css";
 import Button from "../button/button";
 
-const CardAddForm = ({FileInput, onAdd}) => {
+const CardAddForm = ({FileInput, onAdd,authService}) => {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();

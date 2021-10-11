@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  max-width: 80rem;
   flex-direction: column;
   background-color: makerWhite;
 }
@@ -12,18 +13,12 @@
 .container {
   display: flex;
   flex: 1;  
-  max-height: 80vh;
-  min-height: 80vh;
-  max-width: 80vw;
-  min-width: 80vw;
+  min-height: 0;
+  max-height: 85vh;
 }
 
 @media screen and (max-width: mediaQuery) {
   .container {
     flex-direction: column;
-    max-height: none;
-    min-height: none;
-    max-width: none;
-    min-width: none;
   }
 }

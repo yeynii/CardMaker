@@ -20,8 +20,8 @@ class AuthService {
     signOut(this.auth);
   }
 
-  onAuthChange(onUserChanged){
-    onAuthStateChanged(this.auth, user => onUserChanged(user));
+  onAuthChange(onUserChanged) {
+    onAuthStateChanged(this.auth, (user) => onUserChanged(user));
   }
 }
 
