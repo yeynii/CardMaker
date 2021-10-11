@@ -39,7 +39,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       return;
     }
     cardRepository.syncCards(userId, cards => {setCards(cards);});
-  }, [userId]);
+  }, [userId, cardRepository]);
 
   useEffect(() => {
     authService.onAuthChange((user) => {
@@ -50,7 +50,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
           history.push("/");
         }
     });
-  });
+  },[history, authService]);
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
