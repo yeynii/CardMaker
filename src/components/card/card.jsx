@@ -1,6 +1,5 @@
-import React from "react";
+import React,{memo}  from "react";
 import styles from "./card.module.css";
-import {memo} from 'react';
 
 const DEFAULT_IMAGE = "images/default_logo.png";
 

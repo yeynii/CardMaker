@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Editor from "../editor/editor";
 import styles from "./maker.module.css";
@@ -12,9 +12,9 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const [userId, setUserId] = useState(historyState && historyState.id);
 
   const history = useHistory();
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout();
-  };
+  },[authService]);
 
   const onDelete = (card) => {
     setCards((cards) => {
@@ -38,7 +38,8 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     if(!userId){
       return;
     }
-    cardRepository.syncCards(userId, cards => {setCards(cards);});
+    const stopSync = cardRepository.syncCards(userId, cards => {setCards(cards);});
+    return () => stopSync();
   }, [userId, cardRepository]);
 
   useEffect(() => {

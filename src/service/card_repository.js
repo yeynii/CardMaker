@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, remove, onValue } from "firebase/database";
+import { getDatabase, ref, set, remove, onValue, off } from "firebase/database";
 import { firebaseApp } from "./firebase";
 
 class CardRepository{
@@ -20,6 +20,7 @@ class CardRepository{
       const value = snapshot.val();
       value && onUpdate(value);
     });
+    return () => off(dbRef);
   }
 }
 
